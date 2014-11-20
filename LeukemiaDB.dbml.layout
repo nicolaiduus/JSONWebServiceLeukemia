@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LeukemiaDB">
+  <DataContextMoniker Name="/LeukemiaDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="8ceffd8d-a537-402a-9a11-8fed4fa4e0f4" absoluteBounds="3.375, 2.25, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/LeukemiaDBDataContext/Bloodsampledata" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0c9cca59-7a41-4e2d-a537-ba14a198c16b" absoluteBounds="3.3899999999999997, 2.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5497c0bb-497e-4644-b471-fc4d02ec943b" absoluteBounds="0.5, 1.5, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/LeukemiaDBDataContext/Patient" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c408efd6-551b-40ab-8222-6f1f4de6e54d" absoluteBounds="0.51499999999999968, 1.96, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="540158e7-e85b-4a60-a413-d6897a11ced0" absoluteBounds="6, 1.375, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/LeukemiaDBDataContext/Paindata" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4134dc7d-6c16-4396-879a-05808676e038" absoluteBounds="6.015, 1.835, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="df4a8578-134c-499b-b52e-abdb0e3fd45c" absoluteBounds="0.75, 3.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/LeukemiaDBDataContext/Medicinedata" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9b3fc048-0e51-4feb-b630-ed320f1b2f6c" absoluteBounds="0.76500000000000012, 4.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 1.84375); (6 : 1.84375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LeukemiaDBDataContext/Patient/Patient_Paindata" />
+      <nodes>
+        <classShapeMoniker Id="5497c0bb-497e-4644-b471-fc4d02ec943b" />
+        <classShapeMoniker Id="540158e7-e85b-4a60-a413-d6897a11ced0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.375 : 4.11140055338542); (2.75 : 4.11140055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LeukemiaDBDataContext/Bloodsampledata/Bloodsampledata_Medicinedata" />
+      <nodes>
+        <classShapeMoniker Id="8ceffd8d-a537-402a-9a11-8fed4fa4e0f4" />
+        <classShapeMoniker Id="df4a8578-134c-499b-b52e-abdb0e3fd45c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.625 : 2.50169108072917); (1.625 : 3.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LeukemiaDBDataContext/Patient/Patient_Medicinedata" />
+      <nodes>
+        <classShapeMoniker Id="5497c0bb-497e-4644-b471-fc4d02ec943b" />
+        <classShapeMoniker Id="df4a8578-134c-499b-b52e-abdb0e3fd45c" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e2962d51-baf8-424e-be5f-2f54a051b2b0" absoluteBounds="6.5, 4.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/LeukemiaDBDataContext/Diarydata" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e7659424-8024-44c0-b244-9125ec1428aa" absoluteBounds="6.515, 5.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(0.59375 : 2.50169108072917); (0.59375 : 6.34059895833333); (6.5 : 6.34059895833333)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LeukemiaDBDataContext/Patient/Patient_diarydata" />
+      <nodes>
+        <classShapeMoniker Id="5497c0bb-497e-4644-b471-fc4d02ec943b" />
+        <classShapeMoniker Id="e2962d51-baf8-424e-be5f-2f54a051b2b0" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

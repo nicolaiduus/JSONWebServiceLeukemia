@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="leukemiadb" Class="LeukemiaDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=NICOLAI-TOSH\SQLEXPRESS;Initial Catalog=leukemiadb;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="leukemiadbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.bloodsampledata" Member="Bloodsampledatas">
+    <Type Name="Bloodsampledata">
+      <Column Name="bloodsampleid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="alat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="thrombocytes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hemoglobin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="neutrofile" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="crp" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="other" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="leukocytes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Bloodsampledata_Medicinedata" Member="Medicinedatas" ThisKey="bloodsampleid" OtherKey="bloodsampleid" Type="Medicinedata" />
+    </Type>
+  </Table>
+  <Table Name="dbo.patient" Member="Patients">
+    <Type Name="Patient">
+      <Column Name="patientid" Type="System.String" DbType="VarChar(65) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Patient_Paindata" Member="Paindatas" ThisKey="patientid" OtherKey="patientid" Type="Paindata" />
+      <Association Name="Patient_Medicinedata" Member="Medicinedatas" ThisKey="patientid" OtherKey="patientid" Type="Medicinedata" />
+      <Association Name="Patient_diarydata" Member="Diarydatas" ThisKey="patientid" OtherKey="patientid" Type="Diarydata" />
+    </Type>
+  </Table>
+  <Table Name="dbo.paindata" Member="Paindatas">
+    <Type Name="Paindata">
+      <Column Name="id" Type="System.String" DbType="VarChar(65) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="paracetamol" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="morphinelevel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="morphineunit" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="painlevel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="paintype" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="patientid" Type="System.String" DbType="VarChar(65) NOT NULL" CanBeNull="false" />
+      <Association Name="Patient_Paindata" Member="Patient" ThisKey="patientid" OtherKey="patientid" Type="Patient" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.medicinedata" Member="Medicinedatas">
+    <Type Name="Medicinedata">
+      <Column Name="id" Type="System.String" DbType="VarChar(65) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="mtx" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="mercaptopurin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="kemotreatment" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="bloodsampleid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="patientid" Type="System.String" DbType="VarChar(65) NOT NULL" CanBeNull="false" />
+      <Association Name="Bloodsampledata_Medicinedata" Member="Bloodsampledata" ThisKey="bloodsampleid" OtherKey="bloodsampleid" Type="Bloodsampledata" IsForeignKey="true" />
+      <Association Name="Patient_Medicinedata" Member="Patient" ThisKey="patientid" OtherKey="patientid" Type="Patient" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.diarydata" Member="Diarydatas">
+    <Type Name="Diarydata">
+      <Column Name="id" Type="System.String" DbType="VarChar(65) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="protocoltreatmentday" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="weight" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="notes" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="patientid" Type="System.String" DbType="VarChar(65) NOT NULL" CanBeNull="false" />
+      <Association Name="Patient_diarydata" Member="Patient" ThisKey="patientid" OtherKey="patientid" Type="Patient" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

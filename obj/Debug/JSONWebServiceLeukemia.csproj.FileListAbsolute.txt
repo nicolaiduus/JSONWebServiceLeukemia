@@ -1,0 +1,6 @@
+c:\users\nicolai\documents\visual studio 2013\Projects\JSONWebServiceLeukemia\JSONWebServiceLeukemia\bin\JSONWebServiceLeukemia.dll.config
+c:\users\nicolai\documents\visual studio 2013\Projects\JSONWebServiceLeukemia\JSONWebServiceLeukemia\bin\JSONWebServiceLeukemia.dll
+c:\users\nicolai\documents\visual studio 2013\Projects\JSONWebServiceLeukemia\JSONWebServiceLeukemia\bin\JSONWebServiceLeukemia.pdb
+c:\users\nicolai\documents\visual studio 2013\Projects\JSONWebServiceLeukemia\JSONWebServiceLeukemia\obj\Debug\JSONWebServiceLeukemia.csprojResolveAssemblyReference.cache
+c:\users\nicolai\documents\visual studio 2013\Projects\JSONWebServiceLeukemia\JSONWebServiceLeukemia\obj\Debug\JSONWebServiceLeukemia.dll
+c:\users\nicolai\documents\visual studio 2013\Projects\JSONWebServiceLeukemia\JSONWebServiceLeukemia\obj\Debug\JSONWebServiceLeukemia.pdb
